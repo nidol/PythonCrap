@@ -16,8 +16,9 @@ def getWordList(filename):
 	"""
 	Loads and returns a list of words from a file
 	"""
-	f = open(filename, "r")
-	results = f.read().strip().upper().split('\n')
+	with open(filename, "r") as f:
+		results = f.read().strip().upper().split('\n')
+	f.closed
 	return results
 
 def getRandomWord(words):
